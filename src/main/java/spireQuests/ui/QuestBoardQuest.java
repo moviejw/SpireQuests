@@ -46,6 +46,14 @@ public class QuestBoardQuest {
 
             // Quest name
             FontHelper.renderFontCentered(sb, FontHelper.losePowerFont, this.quest.name, this.x + 260.0F * Settings.xScale, this.y + 340.0F * Settings.yScale + boardY, Color.WHITE, 1.2f);
+            FontHelper.renderSmartText(
+                    sb,
+                    FontHelper.cardDescFont_N,
+                    TEXT[4] + quest.author,
+                    this.x + 55F * Settings.xScale,
+                    this.y + 235F * Settings.yScale + boardY,
+                    Settings.CREAM_COLOR
+            );
 
             // Hitboxes
             this.hb.move(this.x + 5.0F * Settings.xScale + (512.0F / 2) * Settings.xScale, this.y - 445.0F * Settings.yScale + boardY + (256.0F / 2) * Settings.yScale);
