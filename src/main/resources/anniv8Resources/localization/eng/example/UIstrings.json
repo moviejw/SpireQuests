@@ -19,5 +19,15 @@
     "EXTRA_TEXT": [
       "? Rooms"
     ]
+  },
+  "${ModID}:LeaveRoomTestQuest": {
+    "TEXT": [
+      "Leave Room Test",
+      "Leave a shop with 50 or less gold twice.",
+      "Test"
+    ],
+    "EXTRA_TEXT": [
+      "Shop exits with <= 50 gold"
+    ]
   }
 }

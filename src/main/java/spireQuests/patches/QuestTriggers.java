@@ -16,6 +16,7 @@ public class QuestTriggers {
     public static final Trigger<AbstractCard> REMOVE_CARD = new Trigger<>();
     public static final Trigger<AbstractCard> ADD_CARD = new Trigger<>();
     public static final Trigger<MapRoomNode> ENTER_ROOM = new Trigger<>();
+    public static final Trigger<MapRoomNode> LEAVE_ROOM = new Trigger<>();
 
     private static boolean disabled() {
         return CardCrawlGame.mode != CardCrawlGame.GameMode.GAMEPLAY;
@@ -64,6 +65,10 @@ public class QuestTriggers {
                 locator = Locator.class
         )
         public static void onEnterRoom(AbstractDungeon __instance, SaveFile file) {
+            if (!disabled() && AbstractDungeon.currMapNode != null) {
+                LEAVE_ROOM.trigger(AbstractDungeon.currMapNode);
+            }
+            
             if (!disabled() && AbstractDungeon.nextRoom != null) {
                 ENTER_ROOM.trigger(AbstractDungeon.nextRoom);
             }
