@@ -83,7 +83,14 @@ public class QuestUI {
                 if (InputHelper.justClickedLeft) {
                     if(quest.complete() || quest.fail()) QuestManager.completeQuest(quest);
                 }
+                if (Settings.isDebug && InputHelper.justClickedRight) {
+                    QuestManager.failQuest(quest);
+                }
             }
+        }
+
+        while (questHitboxes.size() > quests.size()) {
+            questHitboxes.remove(questHitboxes.size() - 1);
         }
 
 
